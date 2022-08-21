@@ -33,7 +33,7 @@ namespace DALGenericTemplate.Tests.Tests.HttpHelperTests
 
             IHttpHelper _httpHelper = new HttpHelper(baseUrl);
 
-            var response = await _httpHelper.Post<AuthResponse>("/Auth/Login", new { email = "admin@carwash.com", password = "123" });
+            var response = await _httpHelper.Post<AuthResponse>("/Auth/Login", new { email = "", password = "" });
 
             Assert.IsType<AuthResponse>(response);
             Assert.NotNull(response);

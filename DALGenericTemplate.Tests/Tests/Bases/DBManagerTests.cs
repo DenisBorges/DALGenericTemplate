@@ -56,7 +56,7 @@ namespace DALGenericTemplate.Tests.Bases
         [Fact]
         public void ValidDBManager_Dapper_FullSuccess()
         {
-            string connectionString = "Server=localhost,1433;Database=Carwash;User Id=sa;Password=sql_server_password_guarulhos;";
+            string connectionString = "";
 
             using(var db = new DBManager(connectionString,EnumProvider.SqlServer))
             {
