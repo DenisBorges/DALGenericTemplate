@@ -10,7 +10,7 @@ namespace DALGenericTemplate.Core.Utils.Helper.Interfaces
     {
         Task<T> Get<T>(string url, Dictionary<string, string> headers = null) where T : class;
         Task<T> Post<T>(string url, string body, Dictionary<string, string> headers = null) where T : class;
-        Task<T> Post<T>(string url, T body, Dictionary<string, string> headers = null) where T : class;
+        Task<T> Post<T>(string url, object body, Dictionary<string, string> headers = null) where T : class;
         Task<T> Put<T>(string url, string body, Dictionary<string, string> headers = null) where T : class;
         Task<T> Delete<T>(string url, string body, Dictionary<string, string> headers = null) where T : class;
         Task<T> Patch<T>(string url, string body, Dictionary<string, string> headers = null) where T : class;

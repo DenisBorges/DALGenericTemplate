@@ -31,7 +31,7 @@ namespace DALGenericTemplate.Core.Utils.Helper
             throw new NotImplementedException();
         }
 
-        public async Task<T> Post<T>(string url, T body, Dictionary<string, string> headers = null) where T : class
+        public async Task<T> Post<T>(string url, object body, Dictionary<string, string> headers = null) where T : class
         {
             try
             {
@@ -40,7 +40,7 @@ namespace DALGenericTemplate.Core.Utils.Helper
                     .PostJsonAsync(body)
                     .ReceiveJson<T>();
             }
-            catch (FlurlHttpException)
+            catch (FlurlHttpException ex)
             {
                 throw;
             }

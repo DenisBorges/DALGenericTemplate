@@ -1,7 +1,9 @@
 ﻿using DALGenericTemplate.Core.Bases;
 using DALGenericTemplate.Core.Bases.Interfaces;
+using DALGenericTemplate.Core.Utils.Enums;
 using DALGenericTemplate.Tests.Mocks;
 using DALGenericTemplate.Tests.Mocks.DBConnectionFakes;
+using DALGenericTemplate.Tests.Mocks.Models;
 using Moq;
 using System.Data;
 using Xunit;
@@ -50,5 +52,20 @@ namespace DALGenericTemplate.Tests.Bases
 
         #endregion
 
+        #region Get - Dapper
+        [Fact]
+        public void ValidDBManager_Dapper_FullSuccess()
+        {
+            string connectionString = "Server=localhost,1433;Database=Carwash;User Id=sa;Password=sql_server_password_guarulhos;";
+
+            using(var db = new DBManager(connectionString,EnumProvider.SqlServer))
+            {
+                var response = db.GetList<Cliente>("SELECT * FROM Clientes");
+
+                Assert.NotNull(response);
+            }
+
+        }
+        #endregion
     }
 }

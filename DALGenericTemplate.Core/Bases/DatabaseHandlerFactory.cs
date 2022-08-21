@@ -11,7 +11,7 @@ namespace DALGenericTemplate.Core.Bases
 
         private string connectionString;
         private EnumProvider provider;
-        
+
 
         public DatabaseHandlerFactory(string connectionStringName, EnumProvider provider)
         {
@@ -28,6 +28,9 @@ namespace DALGenericTemplate.Core.Bases
                 default:
                 case EnumProvider.Oracle:
                     database = new OracleDataAccess(connectionString);
+                    break;
+                case EnumProvider.SqlServer:
+                    database = new SqlDataAccess(connectionString);
                     break;
             }
 

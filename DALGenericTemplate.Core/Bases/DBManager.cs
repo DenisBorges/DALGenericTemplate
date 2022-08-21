@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace DALGenericTemplate.Core.Bases
 {
-    public class DBManager : IDisposable
+    public partial class DBManager : IDisposable
     {
         private DatabaseHandlerFactory dbFactory;
         private IDatabaseHandler database;
